@@ -127,9 +127,9 @@
                 hoverWidth: document.documentElement.clientWidth-50,
                 showNewHousePanel: false,
                 newHouse: {
-                    RoomType: '',
+                    RoomType: 'single',
                     RoomArea: 0.0,
-                    RoomAvailable: true,
+                    RoomAvailable: 'available',
                     RoomRent: '999999',
                     OwnerName: '',
                     OwnerPhone: '',
@@ -237,11 +237,11 @@
 				  RoomType: _this.newHouse.RoomType,
 				  RoomAvailable:_this.newHouse.RoomAvailable,
 				  RoomRent:_this.newHouse.RoomRent,
-				  OwnerName:_this.newHouse.OwnerName,
-				  OwnerPhone:_this.newHouse.OwnerPhone,
 				  RoomAddress:_this.newHouse.RoomAddress,
 				  RoomArea:_this.newHouse.RoomArea,
 				  RoomItem:_this.newHouse.RoomItem,
+				  ServiceId: localStorage.getItem('semail'),
+
 				}
 			  })
 			  .then(function (response){
