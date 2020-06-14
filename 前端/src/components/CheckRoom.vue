@@ -116,7 +116,7 @@ export default {
 
       show: false,
       show1:false,
-      actions: [{ name: '查询应交费用',color:'red'},{name:'查看地址',color:'blue'},{name:'下载合同',color:'#07c160'}],
+      actions: [{ name: '查询应交费用',color:'red'},{name:'查看地址',color:'blue'},{name:'下载合同',color:'#07c160'},{name:'查看该房客服邮箱'}],
       actions1: [{ name: '删除',color:'red'}],
 
       isLoading: false,
@@ -126,16 +126,17 @@ export default {
       ],
       v1:false,
       v2:false,
-      pictures: ['qk1000101.jpg','qk1000201.jpg'],
-      type: ['1','2'],
-      rent: ['2020年12月1日','2021年12月1日'],
-      address: ['1','2'],
+      pictures: [],
+      type: [],
+      rent: [],
+      address: [],
 	  state:[],
-	  ostate:['accepted','renew'],
+	  ostate:[],
 	  pay:[],
 	  delay:[],
-	  ordersid:[],
-	  orderstype:['long','long'],
+	  ordersid:['1','2'],
+	  orderstype:[],
+	  serviceId:['1','2'],
     money:[],
     whichnum:0,
     }
@@ -188,10 +189,18 @@ export default {
                   Dialog({message:"短租无合同"});
               }
               else{
-                  this.url=this.contracturl[this.whichnum];
-                  window.open(this.url);
-                  //Dialog({message:"按ctrl+s下载"});
+			  
+				let url = window.URL.createObjectURL(new Blob([this.contracturl[this.whichnum]]));
+				let link = document.createElement("a");
+				link.style.display = "none";
+				link.href = url;
+				link.setAttribute("download", "顷刻租房合同");
+				document.body.appendChild(link);
+				link.click()
               }
+          }
+          else if(item.name=='查看该房客服邮箱'){
+              Dialog({message:this.serviceId[this.whichnum]});
           }
       },
       onselect1(item){
@@ -271,6 +280,7 @@ export default {
 		_this.rent = response.data.date;
 		_this.state = response.data.state;
 		_this.address = response.data.address;
+		_this.serviceId=response.data.serviceId;
 		
 		_this.ostate = response.data.ordersState; //订单状态waiting accepted rejected finished
 		_this.pay = response.data.pay;

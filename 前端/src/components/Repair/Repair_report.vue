@@ -39,9 +39,10 @@
             <van-popup v-model="showReplyPanel" position="bottom" @close="cancelReply" :style="{ height: '60%' }">
                 <van-form @submit="submitReply">
                     <h4>回复工单</h4>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >工单id:{{thisItem.ReportID}}</div>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >租客邮箱:{{thisItem.ReportUser}}</div>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >任务信息:{{thisItem.ReportItem}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >工单ID:{{thisItem.ReportID}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >报修者邮箱:{{thisItem.ReportUser}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >报修房间:{{thisItem.RoomId}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >工单信息:{{thisItem.ReportItem}}</div>
                     <van-field
                             v-model="editReply"
                             name="回复内容"
@@ -76,8 +77,7 @@
         data(){
             return{
                 reports: [
-                    { ReportID: 'R11111', ReportUser: 'U11111111', ReportItem: '新北区15-102  水龙头堵塞', replied: false},
-                    { ReportID: 'R22222', ReportUser: 'U22222222', ReportItem: '新北区15-205  空调失效', replied: false},
+                    { ReportID: 'R11111', ReportUser: 'U11111111',RoomId:'', ReportItem: '新北区15-102  水龙头堵塞', replied: false}
                 ],
                 listReports: [
 
@@ -168,7 +168,7 @@
 					_this.showReplyPanel = false;
                 _this.refreshingReports=true;
                 _this.onRefreshReports();
-                Toast.success("回复成功");
+                _Toast.success("回复成功");
 				  }
 			  })
 			  .catch(function (error) { // 请求失败处理

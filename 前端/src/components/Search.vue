@@ -31,6 +31,7 @@
 
   </van-sticky> 
 
+    
     <!--<h1 style="color:red;">{{msg}}</h1>-->
 
     <div>
@@ -58,7 +59,7 @@
         </van-list>
     </div>
 
-
+<!--<van-button size="small" type="info" @click="findpic">搜索图片</van-button>-->
     
     <div>
     </div>
@@ -86,6 +87,7 @@ export default {
       radio2:'0',
       searchkey:localStorage.getItem('searchkey'),
       count:'6',
+      url:'../assets/qk1000101.jpg',
 
       pictures: [],
 	    type: [],
@@ -161,6 +163,9 @@ export default {
           }
           else if(value=='3'){//四人间
           }*/
+      },
+      findpic(){
+          window.open('E/qingke/static/contract/contract.txt');
       },
       onchange2(value){
           var _this = this;

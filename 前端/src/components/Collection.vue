@@ -74,10 +74,10 @@ export default {
     return {
       msg: '我的收藏',
       myid:localStorage.getItem('email'),
-      pictures: ['qk1000101.jpg','qk1000201.jpg','qk1000301.jpg'],
+      pictures: [],
       type: ['1','2','3'],
       rent: ['1','2','3'],
-      address: ['一二三四五六七八九十一二三四五六七八九十','2','3'],
+      address: [],
       state:['available','available','rented'],
 
       show: false,

@@ -39,9 +39,10 @@
             <van-popup v-model="showReplyPanel" position="bottom" @close="cancelReply" :style="{ height: '60%' }">
                 <van-form @submit="submitReply">
                     <h4>工单详细内容</h4>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >工单id:{{thisItem.Repair_jobID}}</div>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >租客邮箱:{{thisItem.Repair_jobUser}}</div>
-                    <div style="color: #A9A9A9; float:left; margin-left: 50px; font-size: 20px" >任务信息:{{thisItem.Repair_jobItem}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >工单ID:{{thisItem.Repair_jobID}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >报修者邮箱:{{thisItem.Repair_jobUser}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >报修房间:{{thisItem.RoomId}}</div>
+                    <div style="color: #A9A9A9; float:left; margin-left: 32px; font-size: 14px" >工单信息:{{thisItem.Repair_jobItem}}</div>
                     <van-button round block :disabled="thisItem.replied=='true'" type="info" native-type="submit">
                         我已完成该任务
                     </van-button>
@@ -69,7 +70,7 @@
         data(){
             return{
                 repair_jobs: [
-                    { Repair_jobID: '', Repair_jobUser: '', Repair_jobItem: '', replied: ''},
+                    { Repair_jobID: '', Repair_jobUser: '',RoomId:'', Repair_jobItem: '', replied: ''},
                    ],
                 listRepair_jobs: [
 

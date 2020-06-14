@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-top:'10%'">
         <router-view />
         <van-tabbar route v-model="active" fixed='fixed' border='true' active-color="#07c160" inactive-color="#000">
             <van-tabbar-item to="/CS/CSOrders" icon="balance-list-o" >订单管理</van-tabbar-item>

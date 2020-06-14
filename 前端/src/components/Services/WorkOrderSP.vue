@@ -12,7 +12,8 @@
             <van-cell title="报修备注:" :value="WorkOrderItem" icon="notes-o"/>
         </van-cell-group>
 
-        <van-image width="50" height="50" :src="picture" />
+
+        <van-image width="100" height="100" :src="picture" />
 
         <van-button v-if="RepairmanId==''" style="margin-top: 50px; " round block type="primary" @click="showArrange">安排师傅</van-button>
         <!--设置师傅-->
@@ -87,7 +88,7 @@
                     RepairmanId:'',
                     ServiceId: '',
                 },
-                picture:'',
+                picture:'static/pictures/workorder41.jpg',
             }
         },
         methods:{

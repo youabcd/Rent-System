@@ -71,8 +71,13 @@
         <div style="margin-top: 16px;" v-if="roomid!='qk'">
         <van-button round  type="warning" block native-type="submit" >提交</van-button>
         </div>
+        <div v-if="roomid=='qk'"><h2>还未选择投诉或报修对象，无法提交！</h2></div>
     </van-form>
   </div>
+
+
+
+
 
     <div>
     <p>可以通过以下方式直接联系客服</p>

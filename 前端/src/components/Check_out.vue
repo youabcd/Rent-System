@@ -66,9 +66,9 @@ export default {
   data () {
     return {
         myid:localStorage.getItem('email'),
-        roomid:['qk10001','qk10002','qk10003'],
-        address:['a','b','c'],
-        endday:['2020/12/1','2020/12/1','2020/12/1'],
+        roomid:[],
+        address:[],
+        endday:[],
         c1:true,
         c2:false,
         nowroom:'',

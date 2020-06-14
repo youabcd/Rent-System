@@ -66,7 +66,7 @@
                         placeholder="租金(数字)"
                         :rules="[{ required: true, message: '请填写租金(数字)' }]"
                 />
-                <van-field
+                <!--<van-field
                         v-model="newHouse.OwnerName"
                         name="房东姓名"
                         label="房东姓名"
@@ -80,7 +80,7 @@
                         label="房东联系电话"
                         placeholder="房东联系电话"
                         :rules="[{ required: true, message: '请填写房东联系电话' }]"
-                />
+                />-->
                 <van-field
                         v-model="newHouse.RoomAddress"
                         name="房间地址"

@@ -118,7 +118,7 @@ export default {
       weixin:'17815566221',
       imgSrc:require('../assets/pugongying.jpg'),
 	  
-	  workorderid:['1','2','3'],
+	  workorderid:[],
 	  workorderstate:['finished','waiting','returned'],
 	  serviceid:[],
 	  servicename:[],
@@ -133,7 +133,7 @@ export default {
 	  repairmanitem:[],// 师傅回复内容
 	  returnitem:[],// 租客评价内容
 	  
-	  complaintid:['3','4','5'],
+	  complaintid:[],
 	  servicename1:['1','2','3'],
 	  serviceid1:[],
 	  servicephone1:['1','2','3'],

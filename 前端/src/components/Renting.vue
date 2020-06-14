@@ -63,7 +63,6 @@ export default {
           this.show = true;
       },
       pay(){
-          this.msg='提交成功！请等待客服回复，或直接加客服微信进行协商';
           this.disabled=true;
 		  var _this = this;
 		  axios.get('/pay',{
@@ -77,9 +76,13 @@ export default {
 			_this.success = response.data;
 			if(response.data == false){
 				Toast('提交失败');
+				this.msg='提交失败，请检查您的网络';
+				this.disabled=false;
 			}
 			else{
 				Toast('提交成功');
+				this.msg='提交成功！请等待客服回复，或直接加客服微信进行协商';
+				
 			}
 		  })
 		  .catch(function(error){

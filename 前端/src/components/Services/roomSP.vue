@@ -16,7 +16,7 @@
                 <van-cell title="房间地址" center :value="RoomAddress" icon="location-o"></van-cell>
                 <van-cell title="状态" center icon="bill-o">
                     <template #default>
-                        <div v-if="RoomAvailable" style="color: #40FF40">
+                        <div v-if="RoomAvailable=='available'" style="color: #40FF40">
                             房间可用
                         </div>
                         <div v-else style="color: #FF0000">
@@ -52,10 +52,10 @@
                         />
                         <van-field
                                 v-model="bookData.bookComment"
-                                name="订单备注"
-                                label="订单备注"
-                                placeholder="订单备注"
-                                :rules="[{ required: true, message: '请填写订单备注' }]"
+                                name="租期"
+                                label="租期"
+                                placeholder="输入格式为0/1/0,表示一个月"
+                                :rules="[{ required: true, message: '请填写租期' }]"
                         />
                         <van-button round block type="info" native-type="submit">
                             提交
@@ -249,7 +249,7 @@
 				  RoomId:_this.RoomId,
 				  UserId:_this.bookData.userId,
 				  BookType: _this.bookData.bookType,
-				  BookComment:_this.bookData.bookComment,
+				  BookComment:_this.bookData.bookComment,//租期
 				  
 				}
 			  })
